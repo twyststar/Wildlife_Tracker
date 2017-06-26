@@ -1,0 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.main-heading {
+  height: 200px;
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/23/e8/3c/23e83c2159574cf23c5c617e0566aac6.jpg');
+  background-size: contain;
+  color: white;
+  text-align: center;
+  padding-top: 3%;
+}

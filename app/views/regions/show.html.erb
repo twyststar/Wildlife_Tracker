@@ -1,0 +1,15 @@
+<h1><%= @region.name %></h1>
+
+<div class="">
+  <h4><%= @region.description %></h4>
+</div>
+<div class="">
+  <h3>Recent sightings:</h3>
+</div>
+
+<p><%= link_to "Edit Region", edit_region_path(@region) %></p>
+<p><%= link_to "Remove this Region", region_path(@region),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to regions", regions_path %></p>
