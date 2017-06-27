@@ -1,0 +1,24 @@
+<%= render "layouts/errors", :object => @sighting %>
+
+
+<%= form_for @sighting do |f| %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :reporter %>
+  <%= f.text_field :reporter %>
+  <%= f.select(:animal_id) do %>
+    <% @animals.each do |c| -%>
+      <%= content_tag(:option, c.species, value: c.id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.select(:region_id) do %>
+    <% @regions.each do |c| -%>
+      <%= content_tag(:option, c.name, value: c.id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit  %>
+<% end %>

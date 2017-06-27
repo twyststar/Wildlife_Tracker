@@ -1,3 +1,12 @@
 <h1>Sightings</h1>
 
+<ul>
+  <% @sightings.each do |sighting| %>
+    <li><%= link_to sighting.animal.species, sighting_path(sighting) %>, <%= sighting.location %>, <%= sighting.region.name %> </li>
+  <% end %>
+</ul>
+<br>
+<hr>
+<%= link_to "Report A Sighting", new_sighting_path %>
+<br>
 <%= link_to "Home", "/" %>

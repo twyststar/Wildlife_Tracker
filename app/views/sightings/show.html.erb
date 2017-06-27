@@ -1,0 +1,15 @@
+<h1><%= @sighting.location %>, <%= @sighting.region.name %></h1>
+
+
+
+<h3><%= @sighting.animal.species %></h3>
+<h5><%= @sighting.description %></h5>
+<h4>Reported by: <%= @sighting.reporter %> </h4>
+<br>
+<hr>
+<p><%= link_to "Edit Sighting", edit_sighting_path(@sighting) %></p>
+<p><%= link_to "Remove this Sighting", sighting_path(@sighting),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to sightings", sightings_path %></p>
