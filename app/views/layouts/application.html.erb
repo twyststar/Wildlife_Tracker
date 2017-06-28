@@ -8,10 +8,27 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container">
+  <body>
     <div class="main-heading">
       <h1>The something cool animal project</h1>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="animals#index">Animals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sightings#index">Sightings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="regions#index">Regions</a>
+        </li>
+      </ul>
     </div>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

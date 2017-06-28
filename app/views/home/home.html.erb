@@ -1,5 +1,26 @@
-<h1>we made it home</h1>
+<div class="row">
+  <div class="col-xs-3 left">
+    <%= image_tag("bear.jpg") %>
+    <h1>A cool pic here. Animals section.</h1>
+  </div>
+  <div class="col-xs-6 center">
+    <h3>The Forest Service is considering a proposal from a timber company to clear-cut in the Leimalama Wilderness Area.</h3>
+    <h4> Before they give the go-ahead, we need to do an environmental impact study.</h4>
+    <h4>We've created this page so that the public that visits the area can join our rangers in reporting wildlife sightings.</h4>
+    <p>Our mission is to provide the most accurate information possible, and in doing so ensure responsible stewardship of our wild places.</p>
+    <p>To help in this mission, we have divided the area into several regions. You can learn more about the specific regions by following the link on the right.</p>
+    <p>On the left you will find a link to our animals page, where we keep records of all our known resident species.</p>
+    <h3>To view all sightings, or report a new one, visit the <%= link_to "sightings", new_sighting_path %> page!.</h3>
+  </div>
+  <div class="col-xs-3 right">
+    <%= image_tag("collage.jpg") %>
+    <h1>A cool pic here. Region section.</h1>
+  </div>
+</div>
 
-<%= link_to "Animals", animals_path %>
-<%= link_to "Sightings", sightings_path %>
-<%= link_to "Regions", regions_path %>
+<div class="preview">
+  <h2>This footer-but-not-a-footer will show latest 3/4 sightings? Sort of like a crawl...</h2>
+</div>
+<!-- <div class="footer">
+  <h6>actual footer</h6>
+</div> -->

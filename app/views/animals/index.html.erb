@@ -1,10 +1,13 @@
-<h1 class="jumbotron">Animals</h1>
+<h1 class="center">Animals</h1>
 
-<ul>
-  <% @animals.each do |animal| %>
-    <li><%= link_to animal.species, animal_path(animal) %></li>
-  <% end %>
-</ul>
+<div class="center">
+  <ul>
+    <% @animals.each do |animal| %>
+      <li><%= link_to animal.species, animal_path(animal) %></li>
+    <% end %>
+  </ul>
+
+</div>
 
 <%= link_to "New Animal", new_animal_path %>
 

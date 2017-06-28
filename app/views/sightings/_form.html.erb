@@ -1,24 +1,27 @@
 <%= render "layouts/errors", :object => @sighting %>
 
-
-<%= form_for @sighting do |f| %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :reporter %>
-  <%= f.text_field :reporter %>
-  <%= f.select(:animal_id) do %>
-    <% @animals.each do |c| -%>
-      <%= content_tag(:option, c.species, value: c.id) %>
+<div class="form-group">
+  <%= form_for @sighting, :class =>"form-control" do |f| %>
+    <%= f.text_field :location, :class =>"form-control", :placeholder =>"Please give us a general location, i.e. 'near the pond'" %>
+    <%= f.text_field :description, :class =>"form-control", :placeholder =>"Please provide a description of the encounter" %>
+    <%= f.text_field :reporter, :class =>"form-control", :placeholder =>"Please enter your name" %>
+    <br>
+    <%= f.select(:animal_id) do %>
+        <%= content_tag(:option,"Animal sighted", value: nil)%>
+      <% @animals.each do |c| -%>
+        <%= content_tag(:option, c.species, value: c.id)%>
+      <% end %>
     <% end %>
-  <% end %>
-
-  <%= f.select(:region_id) do %>
-    <% @regions.each do |c| -%>
-      <%= content_tag(:option, c.name, value: c.id) %>
+    <br>
+    <br>
+    <%= f.select(:region_id) do %>
+    <%= content_tag(:option,"Region ", value: nil)%>
+      <% @regions.each do |c| -%>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
     <% end %>
+    <br>
+    <br>
+    <%= f.submit 'Submit Sighting', :class => "form-button" %>
   <% end %>
-
-  <%= f.submit  %>
-<% end %>
+</div>
