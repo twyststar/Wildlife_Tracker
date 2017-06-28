@@ -1,14 +1,34 @@
 <h1><%= @animal.species %></h1>
 
-<div class="col-xs-6 center">
+<div class="col-xs-6 left">
   <h4><%= @animal.description %></h4>
   <h2>Endangered?</h2>
   <h4><%= @animal.endangered %></h4>
 </div>
-<div class="col-xs-6 center">
+<div class="col-xs-6 right">
   <h3>Recent sightings:</h3>
+  <% if @animal.sightings.any? %>
+    <% @animal.sightings.each do |sighting| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><%= sighting.animal.species %>, <%= sighting.created_at %></h4>
+      </div>
+      <div class="panel-body">
+        <h5>Seen at location "<%= sighting.location %>" in <%= sighting.region.name %></h5>
+        <p>Details: "<%= sighting.description %>"</p>
+        <h5>Reported by: <%= sighting.reporter %></h5>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+    <h4>No sightings have been reported!</h4>
+    <%= link_to "Report A Sighting", new_sighting_path %>
+  <% end %>
 </div>
-
+<br>
+<br>
+<hr>
+<h5>Admin</h5>
 <p><%= link_to "Edit Animal", edit_animal_path(@animal) %></p>
 <p><%= link_to "Remove this Animal", animal_path(@animal),
                          :data => {:confirm => "You sure?",
